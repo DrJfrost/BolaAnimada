@@ -1,32 +1,81 @@
 @charset "utf-8";
 /* CSS Document */
 
+html{
+	cursor: url(img/pointer.cur), auto;
+}
+
 body {
-  overflow: hidden;
-  background: url("http://rozup.ir/view/548282/POORIPICTURES-the-next-polylog-wallpaper-for-3840x2160-4k-136-673.jpg");
-  background-repeat:no-repeat;
-  background-size: cover;
+  	overflow: hidden;
+  	background-image: url(img/bg.jpg);
+  	background-repeat:no-repeat;
+  	background-size: cover;
+  	cursor: url(img/pointer.cur), auto;
 }
 
 canvas{
     padding: 0;
     margin: auto;
     display: block;
-    width: 50%;
+    width: 100%;
     height: 50%;
     position: absolute;
-    top: 0;
     bottom: 0;
     left: 0;
-    box-shadow: 0px 0px 40px 10px #000000;
+    background: linear-gradient(rgba(0,0,0,0) 60%, #000000);
     right: 0;
-    border: 4mm ridge rgb(0, 207, 255, 0.8);
 }
 
+.shadow{
+	padding: 0;
+    margin: auto;
+    display: block;
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 90%, #000000);
+    right: 0;
+	z-index: 1;
+}
 
-h1{
+.container{
+    margin: auto;
+    display: block;
+    position: relative;
+	top: 5em;
+	background-color: rgba(0,0,0,0.2);
+	width: 50%;
+	height: 50%;
 	text-align: center;
-    font-family: 'Gugi', cursive;
-    color: #00cfff;
-    text-shadow: 5px 5px 5px #3bb4ff;
+	border-radius: 10em;
 }
+
+.user{
+	padding: 2em 1em;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+    font-family: 'Gugi', cursive;
+    color: #9de3ff;
+	transition: all .2s;
+	cursor: url(img/pointer2.cur), auto;
+}
+
+.user:hover{
+	transform: scale(1.05);
+	filter:drop-shadow(2px 6px 4px #001124);
+}
+
+.title{
+	font-size: 8em;
+	font-family: 'Akronim', cursive;
+	color: #9ce7ff;
+	text-shadow: 2px 2px 15px;
+}
+
+.usr_img{
+	width: 10em;
+}
+

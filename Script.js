@@ -6,7 +6,7 @@ var canvas = document.querySelector('canvas');
 var c = canvas.getContext('2d');
 
 canvas.width = innerWidth;
-canvas.height = innerHeight;
+canvas.height = innerHeight/2;
 
 
 // Variables
@@ -16,10 +16,11 @@ var mouse = {
 };
 
 var colors = [
-	'#2185C5',
-	'#7ECEFD',
-	'#FFF6E5',
-	'#FF7F66'
+	'#001124',
+	'#022444',
+	'#1E5573',
+	'#8ABFE9',
+	'#C8D5F8'
 ];
 
 
@@ -28,7 +29,7 @@ var colors = [
 // Event Listeners
 addEventListener("resize", function() {
 	canvas.width = innerWidth;	
-	canvas.height = innerHeight;
+	canvas.height = innerHeight/2;
   init();
 });
 
@@ -87,23 +88,20 @@ function Ball(x, y, dx, dy, radius, color) {
 	};
 }
 
-var ball;
-var ball2;
+var ballArray=[];
 // Implementation
 
 function init() {
-	var radius = randomIntFromRange(8, 20);
-	var x = randomIntFromRange(radius, canvas.width - radius);
-	var y = randomIntFromRange(0, canvas.height - radius);
-	var dx = randomIntFromRange(-3, 3)
-	var dy = randomIntFromRange(-2, 2)
-	ball = new Ball(x, y, dx, dy, radius, randomColor(colors));
-	var radius2 = randomIntFromRange(8, 20);
-	var x2 = randomIntFromRange(radius, canvas.width - radius);
-	var y2 = randomIntFromRange(0, canvas.height - radius);
-	var dx2 = randomIntFromRange(-3, 3)
-	var dy2= randomIntFromRange(-2, 2)
-	ball2 = new Ball(x2, y2, dx2, dy2, radius2, randomColor(colors));
+	
+	ballArray = [];
+	for(var i=0; i<100; i++){
+		var radius = randomIntFromRange(15, 30);
+		var x = randomIntFromRange(radius, canvas.width - radius);
+		var y = randomIntFromRange(radius, canvas.height - radius);
+		var dx = randomIntFromRange(-3, 3)
+		var dy = randomIntFromRange(-2, 2)
+		ballArray.push(new Ball(x, y, dx, dy, radius, randomColor(colors)));
+	}
 }
 
 // Animation Loop
@@ -112,8 +110,9 @@ function animate() {
 
 	c.clearRect(0, 0, canvas.width, canvas.height);
 
-	ball.update();
-	ball2.update();
+	for(var i=0; i<ballArray.length; i++){
+		ballArray[i].update();
+	}
 }
 
 init();
