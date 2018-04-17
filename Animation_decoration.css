@@ -69,6 +69,22 @@ canvas{
 	transform: scale(1.05);
 	filter:drop-shadow(2px 6px 4px #001124);
 }
+
+.btn{
+	padding: 2em 1em;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+    font-family: 'Gugi', cursive;
+    color: #9de3ff;
+	transition: all .2s;
+	cursor: url(img/pointer2.cur), auto;
+}
+
+.btn:hover{
+	transform: scale(1.05);
+	filter:drop-shadow(2px 6px 4px #6eacd8);
+}
 .ref{
 	padding: 2em 1em;
 	text-align: center;
@@ -80,7 +96,7 @@ canvas{
 	cursor: url(img/pointer2.cur), auto;
 }
 .title{
-	font-size: 10em;
+	font-size: 7vw;
 	font-family: 'Akronim', cursive;
 	color: #9ce7ff;
 	text-shadow: 2px 2px 15px;
